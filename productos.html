@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="principal.CSS">
+    <link rel="icon" type="image/x-icon" href= "Img/favicon.ico">
+    <title>VENTA ONLINE AMIGURUMIS</title>
+</head>
+
+<body>
+    <div class="padre">
+        <header class= "header">
+            <h1>Vane-Gurumis</h1> 
+            <h2>Productos</h2>        
+        <nav>
+                <ul class="nav">
+                    <li><a href="index.html">Principal</a>
+                    <li><a href="somos.html">Quienes Somos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+        </nav> 
+
+
+</header>
+
+<div class="container">
+    <h1>Buscar personaje favorito en base de datos para esta prueba</h1>
+    <br><br><br><br>
+    <button class="btn"
+    onclick="traer()">Obtener</button>
+    </div>
+<br><br>
+    <div class="container" id="contenido">
+   
+<Script>
+function traer() {
+fetch('https://randomuser.me/api')
+.then(res => res.json())
+.then(res => {
+console.log(res)
+console.log(res.results[0].email)
+contenido.innerHTML= `
+<img src="${res.results[0].picture.large}
+" width="100px"
+class="img-fluid rounded-circle">
+<p>Nombre: ${res.results[0].name.first}</p>
+<p>Mail: ${res.results[0].email}</p>`
+})
+}
+
+</Script>              
+       
+
+    </div>
+            
+
+             
+<footer class="footer">@Todos los derechos reservados</footer>
+       
+    </div>
+</body>
+
+</html>

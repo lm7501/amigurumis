@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="principal.CSS">
+    <link rel="icon" type="image/x-icon" href= "Img/favicon.ico">
+    <title>VENTA ONLINE AMIGURUMIS</title>
+</head>
+
+<body>
+    <div class="padre">
+        <header class= "header">
+            <h1>Vane-Gurumis</h1> 
+            <h2>Contactanos</h2>        
+        <nav>
+         
+                <ul class="nav"> 
+                    <li><a href="index.html">Principal</a></li>
+                    <li><a href="somos.html">Quienes Somos</a></li>
+                    <li><a href="productos.html">Productos</a>
+                        <ul>
+                            <li><a href="venta.html">Venta</a></li>
+                       </li>                          
+                        </ul>              
+                   
+               
+        </nav> 
+        </header>
+       
+        <form class="formu" action="index.html">
+            <label for="fname">Nombre:</label><br>
+            <input type="text" id="fname" name="fname" ><br>
+            <label for="lname">Apellido:</label><br>
+            <input type="text" id="lname" name="lname" ><br>
+            <label for= "email">Correo electronico:</label> <br>
+            <input type="email" id="email" name="email"><br>
+            
+            <br><br>
+            <input type="submit" value="Enviar" onClick="sendMessage()">
+            <script>
+                const sendMessage = () => alert("Su formulario se envio correctamente")
+            </script> 
+        </form>
+    <footer class="footer">@Todos los derechos reservados</footer>
+       
+    </div>
+</body>
+
+</html>

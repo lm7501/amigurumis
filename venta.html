@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="principal.CSS">
+    <link rel="icon" type="image/x-icon" href= "Img/favicon.ico">
+    <title>VENTA ONLINE AMIGURUMIS</title>
+</head>
+
+<body>
+    <div class="padre">
+        <header class= "header">
+            <h1>Vane-Gurumis</h1> 
+            <h2>Anime y manga</h2>        
+        <nav>
+         
+                <ul class="nav">
+                    <li><a href="index.html">Principal</a></li>
+                    <li><a href="somos.html">Quienes Somos</a></li>
+                    <li><a href="productos.html">Productos</a>     
+                    <li><a href="contacto.html">Contacto</a></li>
+               
+        </nav> 
+        <button onClick="sendMessage()">Haz clic aqui!</button>
+        <script>
+            const sendMessage = () => alert("Maravillosos descuentos si vas de parte del profe Pablo!!");
+        </script> 
+    <br><br><br><br><br>
+        
+    
+    </header>
+        
+    <form name="fvalida">
+        <table>
+            <tr>
+                <td>Nombre: </td>
+                <td><input type="text" name="nombre" size="30" maxlength="50"></td>
+            </tr>
+            <tr>
+                <td>Edad: </td>
+                <td><input type="text" name="edad" size="3" maxlength="2"></td>
+            </tr>
+            <tr>
+                <td>Interés del Contacto</td>
+                <td>
+                    <select name=interes>
+                        <option value="Elegir">Elegir
+                        <option value="Comercial">Contacto comercial
+                        <option value="Clientes">Atención al cliente
+                        <option value="Proveedores">Contacto de proveedores
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="button" value="Enviar" onclick="valida_envia()"></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+
+        function valida_envia() {
+            
+            if (document.fvalida.nombre.value.length == 0) {
+                alert("Tiene que escribir su nombre")
+                document.fvalida.nombre.focus()
+                return 0;
+            }
+
+            edad = document.fvalida.edad.value
+            edad = validarEntero(edad)
+            document.fvalida.edad.value = edad
+            if (edad == "") {
+                alert("Tiene que introducir un número entero en su edad.")
+                document.fvalida.edad.focus()
+                return 0;
+            } else {
+                if (edad < 18) {
+                    alert("Debe ser mayor de 18 años.")
+                    document.fvalida.edad.focus()
+                    return 0;
+                }
+            }
+
+            if (document.fvalida.interes.selectedIndex == 0) {
+                alert("Debe seleccionar un motivo de su contacto.")
+                document.fvalida.interes.focus()
+                return 0;
+            }
+
+            alert("Muchas gracias por enviar el formulario");
+            document.fvalida.submit();
+        }
+        
+        function validarEntero(valor) {
+        
+            valor = parseInt(valor)
+
+            if (isNaN(valor)) {
+                
+                return ""
+            } else {
+            
+                return valor
+            }
+        }
+    </script>         
+        
+
+       
+
+
+                  
+    <footer class="footer">@Todos los derechos reservados</footer>
+       
+    </div>
+</body>
+
+</html>
+
+
